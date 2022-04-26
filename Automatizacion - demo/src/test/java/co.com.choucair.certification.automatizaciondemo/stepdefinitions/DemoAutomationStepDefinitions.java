@@ -1,5 +1,6 @@
 package co.com.choucair.certification.automatizaciondemo.stepdefinitions;
 
+import co.com.choucair.certification.automatizaciondemo.tasks.OpenUp;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
@@ -14,6 +15,7 @@ public class DemoAutomationStepDefinitions {
 
     @Given("^tania wants to register in demo automation testing$")
     public void taniaWantsToRegisterInDemoAutomationTesting() {
+        OnStage.theActorCalled("Tania Ruiz Sanchez").wasAbleTo(OpenUp.thePage());
     }
 
     @When("^she enters the data in the form$")
