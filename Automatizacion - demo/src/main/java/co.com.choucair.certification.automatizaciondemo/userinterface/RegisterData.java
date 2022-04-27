@@ -1,6 +1,5 @@
 package co.com.choucair.certification.automatizaciondemo.userinterface;
 
-
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
@@ -48,4 +47,8 @@ public class RegisterData extends PageObject {
             .located(By.xpath("//input[@ng-model='Password']"));
     public static final Target INPUT_CONFIRMPASSWORD = Target.the("write password to confirm")
             .located(By.xpath("//input[@ng-model='CPassword']"));
+    public static final Target ENTER_BUTTONSUBMIT = Target.the("Select button submit")
+            .located(By.name("signup"));
+    public static final Target SELECT_ITEM_LIST = Target.the("Select an item from the list message").
+    located(By.xpath("//select[@id='countries']"));
 }
