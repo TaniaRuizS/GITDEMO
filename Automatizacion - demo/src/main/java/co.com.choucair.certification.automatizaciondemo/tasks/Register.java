@@ -10,10 +10,8 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 
 public class Register implements Task {
-    private String data;
-
-    public Register(String data) {
-        this.data = data;
+    public static Register data(){
+        return Tasks.instrumented(Register.class);
     }
 
     public static Register the(String data) {return Tasks.instrumented(Register.class,data);}

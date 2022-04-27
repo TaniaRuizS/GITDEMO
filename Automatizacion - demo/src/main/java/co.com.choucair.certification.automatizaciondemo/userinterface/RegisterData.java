@@ -50,5 +50,5 @@ public class RegisterData extends PageObject {
     public static final Target ENTER_BUTTONSUBMIT = Target.the("Select button submit")
             .located(By.name("signup"));
     public static final Target SELECT_ITEM_LIST = Target.the("Select an item from the list message").
-    located(By.xpath("//select[@id='countries']"));
+    located(By.xpath("//button[text()=' Submit ']"));
 }

@@ -2,7 +2,6 @@ package co.com.choucair.certification.automatizaciondemo.stepdefinitions;
 
 import co.com.choucair.certification.automatizaciondemo.questions.Answer;
 import co.com.choucair.certification.automatizaciondemo.tasks.OpenUp;
-//import co.com.choucair.certification.automatizaciondemo.tasks.Register;
 import co.com.choucair.certification.automatizaciondemo.tasks.Register;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -25,10 +24,10 @@ public class DemoAutomationStepDefinitions {
     @When("^she enters (.*) in the form$")
     public void sheEntersTheDataInTheForm(String data) {
         OnStage.theActorInTheSpotlight().attemptsTo(Register.the(data));
-    }
+        }
 
-    @Then("^she loads the information in (.*)$")
+    @Then("^she loads the information in the (.*) button$")
     public void sheLoadsTheInformationInTheSubmitButton(String question) {
         OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Answer.toThe(question)));
-    }
-}
+            }
+        }
