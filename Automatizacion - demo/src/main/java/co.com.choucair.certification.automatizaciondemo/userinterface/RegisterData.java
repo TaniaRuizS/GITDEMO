@@ -14,4 +14,38 @@ public class RegisterData extends PageObject {
             (By.xpath("//textarea[@ng-model= 'Adress']"));
     public static final Target INPUT_EMAIL = Target.the("Where we write the email").located
             (By.xpath("//input[@ng-model= 'EmailAdress']"));
+    public static final Target INPUT_PHONE = Target.the("Where we write the phone").located
+            (By.xpath("//input[@ng-model= 'Phone']"));
+    public static final Target SELECT_GENDER = Target.the("where you select the gender").located
+            (By.xpath("//input[@value= 'FeMale']"));
+    public static final Target SELECT_HOBBIES = Target.the("where you select the hobbies").located
+            (By.xpath("//input[@value= 'Hockey']"));
+    public static final Target SELECT_CLICK_LANGUAGE = Target.the("where do you click on language").
+            located(By.xpath("//div[@class= 'ui-autocomplete-multiselect ui-state-default ui-widget']"));
+    public static final Target SELECT_LANGUAGE1 = Target.the("where you select on language").
+            located(By.xpath("//a[text()= 'Italian']"));
+    public static final Target SELECT_LANGUAGE2 = Target.the("where you select on language").
+            located(By.xpath("//a[text()= 'Korean']"));
+    public static final Target SELECT_CLICK_OUT = Target.the("Click outside").located
+            (By.xpath("//div[@class= 'row ']"));
+    public static final Target SELECT_CLICK_SKILLS = Target.the("where you select the skills").located
+            (By.xpath("//select[@ng-model= 'Skill']"));
+    public static final Target INPUT_SKILLS = Target.the("where you select the skills").located
+            (By.xpath("//option[text()='APIs']"));
+    public static final Target SELECT_CLICK_COUNTRY = Target.the("where you select the skills").located
+            (By.xpath("//select[@ng-model= 'country']"));
+    public static final Target SELECT_COUNTRY = Target.the("where you select the skills").located
+            (By.xpath("//span[@class= 'select2-selection__arrow']"));
+    public static final Target INPUT_COUNTRY = Target.the("where you select the skills").located
+            (By.xpath("//li[text()='India']"));
+    public static final Target SELECT_YEAR = Target.the("where you select the year").located
+            (By.id("yearbox"));
+    public static final Target SELECT_MONTH = Target.the("where you select the month").located
+            (By.xpath("//select[@ng-model='monthbox']"));
+    public static final Target SELECT_DAY = Target.the("where you select the day").located
+            (By.id("daybox"));
+    public static final Target INPUT_PASSWORD = Target.the("write password to create")
+            .located(By.xpath("//input[@ng-model='Password']"));
+    public static final Target INPUT_CONFIRMPASSWORD = Target.the("write password to confirm")
+            .located(By.xpath("//input[@ng-model='CPassword']"));
 }
