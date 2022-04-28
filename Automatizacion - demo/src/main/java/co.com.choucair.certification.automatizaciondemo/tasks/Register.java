@@ -1,6 +1,7 @@
 package co.com.choucair.certification.automatizaciondemo.tasks;
 
 
+import co.com.choucair.certification.automatizaciondemo.model.DemoRegisterBD;
 import co.com.choucair.certification.automatizaciondemo.userinterface.RegisterData;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -10,20 +11,20 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 
 public class Register implements Task {
-    public static Register data(){
-        return Tasks.instrumented(Register.class);
-    }
+    public DemoRegisterBD demoRegisterBD = new DemoRegisterBD();
 
-    public static Register the(String data) {return Tasks.instrumented(Register.class,data);}
+    public Register(DemoRegisterBD demoRegisterBD) { this.demoRegisterBD = demoRegisterBD; }
+
+    public static Register the(DemoRegisterBD demoRegisterBD) {return Tasks.instrumented(Register.class,demoRegisterBD); }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(RegisterData.INPUT_FIRSTNAME),
-                Enter.theValue("Tania").into(RegisterData.INPUT_FIRSTNAME),
-                Enter.theValue("Ruiz").into(RegisterData.INPUT_LASTNAME),
-                Enter.theValue("Av Japon No 3-55").into(RegisterData.INPUT_ADDRESS),
-                Enter.theValue("tania123@hotmail.com").into(RegisterData.INPUT_EMAIL),
-                Enter.theValue("3103900115").into(RegisterData.INPUT_PHONE),
+                Enter.theValue(demoRegisterBD.getFirstname()).into(RegisterData.INPUT_FIRSTNAME),
+                Enter.theValue(demoRegisterBD.getLastname()).into(RegisterData.INPUT_LASTNAME),
+                Enter.theValue(demoRegisterBD.getAddress()).into(RegisterData.INPUT_ADDRESS),
+                Enter.theValue(demoRegisterBD.getEmail()).into(RegisterData.INPUT_EMAIL),
+                Enter.theValue(demoRegisterBD.getPhone()).into(RegisterData.INPUT_PHONE),
                 Click.on(RegisterData.SELECT_GENDER),
                 Click.on(RegisterData.SELECT_HOBBIES),
                 Click.on(RegisterData.SELECT_CLICK_LANGUAGE),
@@ -35,11 +36,11 @@ public class Register implements Task {
                 Click.on(RegisterData.SELECT_CLICK_COUNTRY),
                 Click.on(RegisterData.SELECT_COUNTRY),
                 Click.on(RegisterData.INPUT_COUNTRY),
-                SelectFromOptions.byVisibleText("1996").from(RegisterData.SELECT_YEAR),
-                SelectFromOptions.byVisibleText("April").from(RegisterData.SELECT_MONTH),
-                SelectFromOptions.byVisibleText("19").from(RegisterData.SELECT_DAY),
-                Enter.theValue("Dino123*").into(RegisterData.INPUT_PASSWORD),
-                Enter.theValue("Dino123*").into(RegisterData.INPUT_CONFIRMPASSWORD),
+                SelectFromOptions.byVisibleText(demoRegisterBD.getYear()).from(RegisterData.SELECT_YEAR),
+                SelectFromOptions.byVisibleText(demoRegisterBD.getMonth()).from(RegisterData.SELECT_MONTH),
+                SelectFromOptions.byVisibleText(demoRegisterBD.getDay()).from(RegisterData.SELECT_DAY),
+                Enter.theValue(demoRegisterBD.getPassword1()).into(RegisterData.INPUT_PASSWORD),
+                Enter.theValue(demoRegisterBD.getPassword2()).into(RegisterData.INPUT_CONFIRMPASSWORD),
                 Click.on(RegisterData.ENTER_BUTTONSUBMIT)
         );
     }

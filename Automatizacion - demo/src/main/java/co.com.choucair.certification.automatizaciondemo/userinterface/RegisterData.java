@@ -27,15 +27,15 @@ public class RegisterData extends PageObject {
             located(By.xpath("//a[text()= 'Korean']"));
     public static final Target SELECT_CLICK_OUT = Target.the("Click outside").located
             (By.xpath("//div[@class= 'row ']"));
-    public static final Target SELECT_CLICK_SKILLS = Target.the("where you select the skills").located
+    public static final Target SELECT_CLICK_SKILLS = Target.the("where do you click on skills").located
             (By.xpath("//select[@ng-model= 'Skill']"));
     public static final Target INPUT_SKILLS = Target.the("where you select the skills").located
             (By.xpath("//option[text()='APIs']"));
-    public static final Target SELECT_CLICK_COUNTRY = Target.the("where you select the skills").located
+    public static final Target SELECT_CLICK_COUNTRY = Target.the("where do you click on Country").located
             (By.xpath("//select[@ng-model= 'country']"));
-    public static final Target SELECT_COUNTRY = Target.the("where you select the skills").located
+    public static final Target SELECT_COUNTRY = Target.the("where you select the Country").located
             (By.xpath("//span[@class= 'select2-selection__arrow']"));
-    public static final Target INPUT_COUNTRY = Target.the("where you select the skills").located
+    public static final Target INPUT_COUNTRY = Target.the("Where we write the Country").located
             (By.xpath("//li[text()='India']"));
     public static final Target SELECT_YEAR = Target.the("where you select the year").located
             (By.id("yearbox"));

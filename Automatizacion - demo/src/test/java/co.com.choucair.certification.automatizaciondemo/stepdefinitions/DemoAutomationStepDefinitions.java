@@ -1,5 +1,6 @@
 package co.com.choucair.certification.automatizaciondemo.stepdefinitions;
 
+import co.com.choucair.certification.automatizaciondemo.model.DemoRegisterBD;
 import co.com.choucair.certification.automatizaciondemo.questions.Answer;
 import co.com.choucair.certification.automatizaciondemo.tasks.OpenUp;
 import co.com.choucair.certification.automatizaciondemo.tasks.Register;
@@ -11,6 +12,8 @@ import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
+import java.util.List;
+
 public class DemoAutomationStepDefinitions {
 
     @Before
@@ -21,9 +24,9 @@ public class DemoAutomationStepDefinitions {
         OnStage.theActorCalled("Tania Ruiz Sanchez").wasAbleTo(OpenUp.thePage());
     }
 
-    @When("^she enters (.*) in the form$")
-    public void sheEntersTheDataInTheForm(String data) {
-        OnStage.theActorInTheSpotlight().attemptsTo(Register.the(data));
+    @When("^she enters the data in the form$")
+    public void sheEntersTheDataInTheForm(List<DemoRegisterBD> demoRegisterBD) {
+        OnStage.theActorInTheSpotlight().attemptsTo(Register.the(demoRegisterBD.get(0)));
         }
 
     @Then("^she loads the information in the (.*) button$")
