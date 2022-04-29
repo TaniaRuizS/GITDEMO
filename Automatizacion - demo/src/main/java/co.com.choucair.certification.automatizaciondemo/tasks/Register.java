@@ -19,29 +19,31 @@ public class Register implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Click.on(RegisterData.INPUT_FIRSTNAME),
-                Enter.theValue(demoRegisterBD.getFirstname()).into(RegisterData.INPUT_FIRSTNAME),
-                Enter.theValue(demoRegisterBD.getLastname()).into(RegisterData.INPUT_LASTNAME),
-                Enter.theValue(demoRegisterBD.getAddress()).into(RegisterData.INPUT_ADDRESS),
-                Enter.theValue(demoRegisterBD.getEmail()).into(RegisterData.INPUT_EMAIL),
-                Enter.theValue(demoRegisterBD.getPhone()).into(RegisterData.INPUT_PHONE),
-                Click.on(RegisterData.SELECT_GENDER),
-                Click.on(RegisterData.SELECT_HOBBIES),
-                Click.on(RegisterData.SELECT_CLICK_LANGUAGE),
-                Click.on(RegisterData.SELECT_LANGUAGE1),
-                Click.on(RegisterData.SELECT_LANGUAGE2),
-                Click.on(RegisterData.SELECT_CLICK_OUT),
-                Click.on(RegisterData.SELECT_CLICK_SKILLS),
-                Click.on(RegisterData.INPUT_SKILLS),
-                Click.on(RegisterData.SELECT_CLICK_COUNTRY),
-                Click.on(RegisterData.SELECT_COUNTRY),
-                Click.on(RegisterData.INPUT_COUNTRY),
-                SelectFromOptions.byVisibleText(demoRegisterBD.getYear()).from(RegisterData.SELECT_YEAR),
-                SelectFromOptions.byVisibleText(demoRegisterBD.getMonth()).from(RegisterData.SELECT_MONTH),
-                SelectFromOptions.byVisibleText(demoRegisterBD.getDay()).from(RegisterData.SELECT_DAY),
-                Enter.theValue(demoRegisterBD.getPassword1()).into(RegisterData.INPUT_PASSWORD),
-                Enter.theValue(demoRegisterBD.getPassword2()).into(RegisterData.INPUT_CONFIRMPASSWORD),
-                Click.on(RegisterData.ENTER_BUTTONSUBMIT)
+        actor.attemptsTo(Click.on(RegisterData.INPUT_FIRSTNAME));
+                actor.attemptsTo(Enter.theValue(demoRegisterBD.getFirstname()).into(RegisterData.INPUT_FIRSTNAME));
+                actor.attemptsTo(Enter.theValue(demoRegisterBD.getLastname()).into(RegisterData.INPUT_LASTNAME));
+                actor.attemptsTo(Enter.theValue(demoRegisterBD.getAddress()).into(RegisterData.INPUT_ADDRESS));
+                actor.attemptsTo(Enter.theValue(demoRegisterBD.getEmail()).into(RegisterData.INPUT_EMAIL));
+                actor.attemptsTo(Enter.theValue(demoRegisterBD.getPhone()).into(RegisterData.INPUT_PHONE));
+                if(demoRegisterBD.getGender().equals("Male")){actor.attemptsTo(Click.on(RegisterData.SELECT_GENDER_MALE));}
+                else{actor.attemptsTo(Click.on(RegisterData.SELECT_GENDER_FEMALE));}
+                //Click.on(RegisterData.SELECT_GENDER),
+                actor.attemptsTo(Click.on(RegisterData.SELECT_HOBBIES));
+                actor.attemptsTo(Click.on(RegisterData.SELECT_CLICK_LANGUAGE));
+                actor.attemptsTo(Click.on(RegisterData.SELECT_LANGUAGE1));
+                actor.attemptsTo(Click.on(RegisterData.SELECT_LANGUAGE2));
+                actor.attemptsTo(Click.on(RegisterData.SELECT_CLICK_OUT));
+                actor.attemptsTo(Click.on(RegisterData.SELECT_CLICK_SKILLS));
+                actor.attemptsTo(Click.on(RegisterData.INPUT_SKILLS));
+                actor.attemptsTo(Click.on(RegisterData.SELECT_CLICK_COUNTRY));
+                actor.attemptsTo(Click.on(RegisterData.SELECT_COUNTRY));
+                actor.attemptsTo(Click.on(RegisterData.INPUT_COUNTRY));
+                actor.attemptsTo(SelectFromOptions.byVisibleText(demoRegisterBD.getYear()).from(RegisterData.SELECT_YEAR));
+                actor.attemptsTo(SelectFromOptions.byVisibleText(demoRegisterBD.getMonth()).from(RegisterData.SELECT_MONTH));
+                actor.attemptsTo(SelectFromOptions.byVisibleText(demoRegisterBD.getDay()).from(RegisterData.SELECT_DAY));
+                actor.attemptsTo(Enter.theValue(demoRegisterBD.getPassword1()).into(RegisterData.INPUT_PASSWORD));
+                actor.attemptsTo(Enter.theValue(demoRegisterBD.getPassword2()).into(RegisterData.INPUT_CONFIRMPASSWORD));
+                actor.attemptsTo(Click.on(RegisterData.ENTER_BUTTONSUBMIT)
         );
     }
 }

@@ -15,8 +15,10 @@ public class RegisterData extends PageObject {
             (By.xpath("//input[@ng-model= 'EmailAdress']"));
     public static final Target INPUT_PHONE = Target.the("Where we write the phone").located
             (By.xpath("//input[@ng-model= 'Phone']"));
-    public static final Target SELECT_GENDER = Target.the("where you select the gender").located
+    public static final Target SELECT_GENDER_FEMALE = Target.the("where you select the gender female").located
             (By.xpath("//input[@value= 'FeMale']"));
+    public static final Target SELECT_GENDER_MALE = Target.the("where you select the male").located
+            (By.xpath("//input[@value= 'Male']"));
     public static final Target SELECT_HOBBIES = Target.the("where you select the hobbies").located
             (By.xpath("//input[@value= 'Hockey']"));
     public static final Target SELECT_CLICK_LANGUAGE = Target.the("where do you click on language").
