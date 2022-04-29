@@ -19,7 +19,11 @@ public class RegisterData extends PageObject {
             (By.xpath("//input[@value= 'FeMale']"));
     public static final Target SELECT_GENDER_MALE = Target.the("where you select the male").located
             (By.xpath("//input[@value= 'Male']"));
-    public static final Target SELECT_HOBBIES = Target.the("where you select the hobbies").located
+    public static final Target SELECT_HOBBIES_CRICKET = Target.the("where you select the hobbies Cricket").located
+            (By.xpath("//input[@value= 'Cricket']"));
+    public static final Target SELECT_HOBBIES_MOVIES = Target.the("where you select the hobbies Movies").located
+            (By.xpath("//input[@value= 'Movies']"));
+    public static final Target SELECT_HOBBIES_HOCKEY = Target.the("where you select the hobbies Hockey").located
             (By.xpath("//input[@value= 'Hockey']"));
     public static final Target SELECT_CLICK_LANGUAGE = Target.the("where do you click on language").
             located(By.xpath("//div[@class= 'ui-autocomplete-multiselect ui-state-default ui-widget']"));
