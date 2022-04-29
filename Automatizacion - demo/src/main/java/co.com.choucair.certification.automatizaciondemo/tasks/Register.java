@@ -26,9 +26,7 @@ public class Register implements Task {
                 actor.attemptsTo(Enter.theValue(demoRegisterBD.getEmail()).into(RegisterData.INPUT_EMAIL));
                 actor.attemptsTo(Enter.theValue(demoRegisterBD.getPhone()).into(RegisterData.INPUT_PHONE));
                 if(demoRegisterBD.getGender().equals("Male")){actor.attemptsTo(Click.on(RegisterData.SELECT_GENDER_MALE));} else{actor.attemptsTo(Click.on(RegisterData.SELECT_GENDER_FEMALE));}
-                if(demoRegisterBD.getHobbies().equals("Cricket")) {actor.attemptsTo(Click.on(RegisterData.SELECT_HOBBIES_CRICKET));}
-                else if (demoRegisterBD.getHobbies().equals("Movies")){actor.attemptsTo(Click.on(RegisterData.SELECT_HOBBIES_MOVIES));}
-                else {actor.attemptsTo(Click.on(RegisterData.SELECT_HOBBIES_HOCKEY));}
+                if(demoRegisterBD.getHobbies().contains("Cricket")) {actor.attemptsTo(Click.on(RegisterData.SELECT_HOBBIES_CRICKET));} if (demoRegisterBD.getHobbies().contains("Movies")){actor.attemptsTo(Click.on(RegisterData.SELECT_HOBBIES_MOVIES));} if(demoRegisterBD.getHobbies().contains("Hockey")){actor.attemptsTo(Click.on(RegisterData.SELECT_HOBBIES_HOCKEY));}
                 actor.attemptsTo(Click.on(RegisterData.SELECT_CLICK_LANGUAGE));
                 actor.attemptsTo(Click.on(RegisterData.SELECT_LANGUAGE1));
                 actor.attemptsTo(Click.on(RegisterData.SELECT_LANGUAGE2));
