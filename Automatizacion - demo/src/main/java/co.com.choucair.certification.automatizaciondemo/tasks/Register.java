@@ -29,11 +29,9 @@ public class Register implements Task {
                 if(demoRegisterBD.getGender().equals("Male")){actor.attemptsTo(Click.on(RegisterData.SELECT_GENDER_MALE));} else{actor.attemptsTo(Click.on(RegisterData.SELECT_GENDER_FEMALE));}
                 if(demoRegisterBD.getHobbies().contains("Cricket")) {actor.attemptsTo(Click.on(RegisterData.SELECT_HOBBIES_CRICKET));} if (demoRegisterBD.getHobbies().contains("Movies")){actor.attemptsTo(Click.on(RegisterData.SELECT_HOBBIES_MOVIES));} if(demoRegisterBD.getHobbies().contains("Hockey")){actor.attemptsTo(Click.on(RegisterData.SELECT_HOBBIES_HOCKEY));}
                 actor.attemptsTo(Click.on(RegisterData.SELECT_CLICK_LANGUAGE));
-                actor.attemptsTo(Click.on(RegisterData.SELECT_LANGUAGE1));
-                actor.attemptsTo(Click.on(RegisterData.SELECT_LANGUAGE2));
+                //actor.attemptsTo(Click.on(RegisterData.SELECT_LANGUAGE1));
                 actor.attemptsTo(Click.on(RegisterData.SELECT_CLICK_OUT));
-                actor.attemptsTo(Click.on(RegisterData.SELECT_CLICK_SKILLS));
-                actor.attemptsTo(Click.on(RegisterData.INPUT_SKILLS));
+                actor.attemptsTo(SelectFromOptions.byVisibleText(demoRegisterBD.getSkills()).from(RegisterData.SELECT_CLICK_SKILLS));
                 actor.attemptsTo(Click.on(RegisterData.CLICK_COUNTRY));
                 actor.attemptsTo(Click.on(RegisterData.SELECT_CLICK_COUNTRY));
                 actor.attemptsTo(Enter.theValue(demoRegisterBD.getSelectcountry()).into(RegisterData.INPUT_COUNTRY).thenHit(Keys.ARROW_DOWN, Keys.ENTER));

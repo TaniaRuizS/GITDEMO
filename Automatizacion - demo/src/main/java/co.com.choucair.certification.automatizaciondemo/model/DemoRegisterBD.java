@@ -8,6 +8,8 @@ public class DemoRegisterBD {
     private String phone;
     private String gender;
     private String hobbies;
+    private String languajes;
+    private String skills;
     private String selectcountry;
     private String year;
     private String month;
@@ -36,6 +38,12 @@ public class DemoRegisterBD {
 
     public String getHobbies() {return hobbies;}
     public void setHobbies(String hobbies) {this.hobbies = hobbies;}
+
+    public String getLanguajes() {return languajes;}
+    public void setLanguajes(String languajes) {this.languajes = languajes;}
+
+    public String getSkills() {return skills;}
+    public void setSkills(String skills) {this.skills = skills;}
 
     public String getSelectcountry() {return selectcountry;}
     public void setSelectcountry(String selectcountry) {this.selectcountry = selectcountry;}
