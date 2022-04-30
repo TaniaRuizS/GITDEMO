@@ -27,8 +27,6 @@ public class RegisterData extends PageObject {
             (By.xpath("//input[@value= 'Hockey']"));
     public static final Target SELECT_CLICK_LANGUAGE = Target.the("where do you click on language").
             located(By.xpath("//div[@class= 'ui-autocomplete-multiselect ui-state-default ui-widget']"));
-    //public static final Target SELECT_LISTLANGUAGE = Target.the("where you select list language").
-            //located(By.xpath("//ul[@class='ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all']"));
     public static final Target SELECT_CLICK_OUT = Target.the("Click outside").located
             (By.xpath("//div[@class= 'row ']"));
     public static final Target SELECT_CLICK_SKILLS = Target.the("where do you click on skills").located

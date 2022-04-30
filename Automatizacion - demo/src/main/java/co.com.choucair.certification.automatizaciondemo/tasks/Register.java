@@ -9,7 +9,13 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
+import net.serenitybdd.screenplay.questions.Text;
+import net.serenitybdd.screenplay.targets.Target;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Register implements Task {
     public DemoRegisterBD demoRegisterBD = new DemoRegisterBD();
@@ -26,10 +32,9 @@ public class Register implements Task {
                 actor.attemptsTo(Enter.theValue(demoRegisterBD.getAddress()).into(RegisterData.INPUT_ADDRESS));
                 actor.attemptsTo(Enter.theValue(demoRegisterBD.getEmail()).into(RegisterData.INPUT_EMAIL));
                 actor.attemptsTo(Enter.theValue(demoRegisterBD.getPhone()).into(RegisterData.INPUT_PHONE));
-                if(demoRegisterBD.getGender().equals("Male")){actor.attemptsTo(Click.on(RegisterData.SELECT_GENDER_MALE));} else{actor.attemptsTo(Click.on(RegisterData.SELECT_GENDER_FEMALE));}
-                if(demoRegisterBD.getHobbies().contains("Cricket")) {actor.attemptsTo(Click.on(RegisterData.SELECT_HOBBIES_CRICKET));} if (demoRegisterBD.getHobbies().contains("Movies")){actor.attemptsTo(Click.on(RegisterData.SELECT_HOBBIES_MOVIES));} if(demoRegisterBD.getHobbies().contains("Hockey")){actor.attemptsTo(Click.on(RegisterData.SELECT_HOBBIES_HOCKEY));}
-                actor.attemptsTo(Click.on(RegisterData.SELECT_CLICK_LANGUAGE));
-                //actor.attemptsTo(Click.on(RegisterData.SELECT_LANGUAGE1));
+                selecctgender(actor);
+                selecthobbies(actor);
+                selectLanguaje(actor);
                 actor.attemptsTo(Click.on(RegisterData.SELECT_CLICK_OUT));
                 actor.attemptsTo(SelectFromOptions.byVisibleText(demoRegisterBD.getSkills()).from(RegisterData.SELECT_CLICK_SKILLS));
                 actor.attemptsTo(Click.on(RegisterData.CLICK_COUNTRY));
@@ -42,5 +47,37 @@ public class Register implements Task {
                 actor.attemptsTo(Enter.theValue(demoRegisterBD.getPassword2()).into(RegisterData.INPUT_CONFIRMPASSWORD));
                 actor.attemptsTo(Click.on(RegisterData.ENTER_BUTTONSUBMIT)
         );
+    }
+
+    private <T extends Actor> void selecthobbies(T actor) {
+        if (demoRegisterBD.getHobbies().contains("Cricket")) {
+            actor.attemptsTo(Click.on(RegisterData.SELECT_HOBBIES_CRICKET));
+        }
+        if (demoRegisterBD.getHobbies().contains("Movies")) {
+            actor.attemptsTo(Click.on(RegisterData.SELECT_HOBBIES_MOVIES));
+        }
+        if (demoRegisterBD.getHobbies().contains("Hockey")) {
+            actor.attemptsTo(Click.on(RegisterData.SELECT_HOBBIES_HOCKEY));
+        }
+    }
+
+    private <T extends Actor> void selecctgender(T actor) {
+        if (demoRegisterBD.getGender().equals("Male")) {
+            actor.attemptsTo(Click.on(RegisterData.SELECT_GENDER_MALE));
+        } else {
+            actor.attemptsTo(Click.on(RegisterData.SELECT_GENDER_FEMALE));
+        }
+    }
+
+    public void selectLanguaje(Actor actor) {
+        List<String> listlanguaje = Arrays.asList(demoRegisterBD.getLanguajes().split("-"));
+        actor.attemptsTo(Click.on(RegisterData.SELECT_CLICK_LANGUAGE));
+        for (String languaje: listlanguaje) {
+            String xpath = "//a[text()= '%s']";
+            Target select_languaje = Target.the("where you select on language").
+                    located(By.xpath(String.format(xpath,languaje)));
+            actor.attemptsTo(Click.on(select_languaje));
+        }
+
     }
 }
