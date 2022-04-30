@@ -8,11 +8,13 @@ public class DemoRegisterBD {
     private String phone;
     private String gender;
     private String hobbies;
+    private String selectcountry;
     private String year;
     private String month;
     private String day;
     private String password1;
     private String password2;
+
 
     public String getFirstname() {return firstname;}
     public void setFirstname(String firstname) {this.firstname = firstname;}
@@ -34,6 +36,9 @@ public class DemoRegisterBD {
 
     public String getHobbies() {return hobbies;}
     public void setHobbies(String hobbies) {this.hobbies = hobbies;}
+
+    public String getSelectcountry() {return selectcountry;}
+    public void setSelectcountry(String selectcountry) {this.selectcountry = selectcountry;}
 
     public String getYear() {return year;}
     public void setYear(String year) {this.year = year;}

@@ -37,12 +37,12 @@ public class RegisterData extends PageObject {
             (By.xpath("//select[@ng-model= 'Skill']"));
     public static final Target INPUT_SKILLS = Target.the("where you select the skills").located
             (By.xpath("//option[text()='APIs']"));
+    public static final Target CLICK_COUNTRY = Target.the("where do you click on Country").located
+            (By.xpath("//select[@id= 'countries']"));
     public static final Target SELECT_CLICK_COUNTRY = Target.the("where do you click on Country").located
-            (By.xpath("//select[@ng-model= 'country']"));
-    public static final Target SELECT_COUNTRY = Target.the("where you select the Country").located
             (By.xpath("//span[@class= 'select2-selection__arrow']"));
-    public static final Target INPUT_COUNTRY = Target.the("Where we write the Country").located
-            (By.xpath("//li[text()='India']"));
+    public static final Target INPUT_COUNTRY = Target.the("where you write the Country").located
+            (By.xpath("//input[@class= 'select2-search__field']"));
     public static final Target SELECT_YEAR = Target.the("where you select the year").located
             (By.id("yearbox"));
     public static final Target SELECT_MONTH = Target.the("where you select the month").located

@@ -9,6 +9,7 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
+import org.openqa.selenium.Keys;
 
 public class Register implements Task {
     public DemoRegisterBD demoRegisterBD = new DemoRegisterBD();
@@ -33,9 +34,9 @@ public class Register implements Task {
                 actor.attemptsTo(Click.on(RegisterData.SELECT_CLICK_OUT));
                 actor.attemptsTo(Click.on(RegisterData.SELECT_CLICK_SKILLS));
                 actor.attemptsTo(Click.on(RegisterData.INPUT_SKILLS));
+                actor.attemptsTo(Click.on(RegisterData.CLICK_COUNTRY));
                 actor.attemptsTo(Click.on(RegisterData.SELECT_CLICK_COUNTRY));
-                actor.attemptsTo(Click.on(RegisterData.SELECT_COUNTRY));
-                actor.attemptsTo(Click.on(RegisterData.INPUT_COUNTRY));
+                actor.attemptsTo(Enter.theValue(demoRegisterBD.getSelectcountry()).into(RegisterData.INPUT_COUNTRY).thenHit(Keys.ARROW_DOWN, Keys.ENTER));
                 actor.attemptsTo(SelectFromOptions.byVisibleText(demoRegisterBD.getYear()).from(RegisterData.SELECT_YEAR));
                 actor.attemptsTo(SelectFromOptions.byVisibleText(demoRegisterBD.getMonth()).from(RegisterData.SELECT_MONTH));
                 actor.attemptsTo(SelectFromOptions.byVisibleText(demoRegisterBD.getDay()).from(RegisterData.SELECT_DAY));
