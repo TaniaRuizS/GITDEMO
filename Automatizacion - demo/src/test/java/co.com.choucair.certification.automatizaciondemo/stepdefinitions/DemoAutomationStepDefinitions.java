@@ -29,8 +29,8 @@ public class DemoAutomationStepDefinitions {
         OnStage.theActorInTheSpotlight().attemptsTo(Register.the(demoRegisterBD.get(0)));
         }
 
-    @Then("^she loads the information in the (.*) button$")
-    public void sheLoadsTheInformationInTheSubmitButton(String question) {
-        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Answer.toThe(question)));
+    @Then("^she loads the information in the Submit button$")
+    public void sheLoadsTheInformationInTheSubmitButton(List<DemoRegisterBD> demoRegisterBD) {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Answer.toThe(demoRegisterBD.get(0))));
             }
         }

@@ -10,12 +10,15 @@ public class DemoRegisterBD {
     private String hobbies;
     private String languajes;
     private String skills;
+    private String country;
     private String selectcountry;
     private String year;
     private String month;
     private String day;
     private String password1;
     private String password2;
+    private String selectcountryR;
+
 
 
     public String getFirstname() {return firstname;}
@@ -45,6 +48,9 @@ public class DemoRegisterBD {
     public String getSkills() {return skills;}
     public void setSkills(String skills) {this.skills = skills;}
 
+    public String getCountry() {return country;}
+    public void setCountry(String country) {this.country = country;}
+
     public String getSelectcountry() {return selectcountry;}
     public void setSelectcountry(String selectcountry) {this.selectcountry = selectcountry;}
 
@@ -62,4 +68,7 @@ public class DemoRegisterBD {
 
     public String getPassword2() {return password2;}
     public void setPassword2(String password2) {this.password2 = password2;}
+
+    public String getSelectcountryR() {return selectcountryR;}
+    public void setSelectcountryR(String selectcountryR) {this.selectcountryR = selectcountryR;}
 }

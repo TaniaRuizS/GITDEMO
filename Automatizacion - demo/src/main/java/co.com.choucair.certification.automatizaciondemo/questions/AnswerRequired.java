@@ -6,14 +6,13 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 
-public class Answer implements Question<Boolean>{
+public class AnswerRequired implements Question<Boolean> {
     private DemoRegisterBD demoRegisterBD;
 
-    public Answer (DemoRegisterBD demoRegisterBD) {
-        this.demoRegisterBD = demoRegisterBD;}
+    public AnswerRequired(DemoRegisterBD demoRegisterBD){ this.demoRegisterBD = demoRegisterBD;}
 
-    public static Answer toThe(DemoRegisterBD demoRegisterBD) {
-        return new Answer(demoRegisterBD);}
+    public static AnswerRequired fields(DemoRegisterBD demoRegisterBD) {
+        return new AnswerRequired(demoRegisterBD);}
 
     @Override
     public Boolean answeredBy(Actor actor) {

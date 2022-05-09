@@ -31,8 +31,8 @@ public class RegisterData extends PageObject {
             (By.xpath("//div[@class= 'row ']"));
     public static final Target SELECT_CLICK_SKILLS = Target.the("where do you click on skills").located
             (By.xpath("//select[@id= 'Skills']"));
-    public static final Target CLICK_COUNTRY = Target.the("where do you click on Country").located
-            (By.xpath("//select[@id= 'countries']"));
+    //public static final Target CLICK_COUNTRY = Target.the("where do you click on Country").located
+            //(By.xpath("//select[@id= 'countries']"));
     public static final Target SELECT_CLICK_COUNTRY = Target.the("where do you click on Country").located
             (By.xpath("//span[@class= 'select2-selection__arrow']"));
     public static final Target INPUT_COUNTRY = Target.the("where you write the Country").located
@@ -50,5 +50,5 @@ public class RegisterData extends PageObject {
     public static final Target ENTER_BUTTONSUBMIT = Target.the("Select button submit")
             .located(By.name("signup"));
     public static final Target SELECT_ITEM_LIST = Target.the("Select an item from the list message").
-    located(By.xpath("//button[text()=' Submit ']"));
+    located(By.xpath("//option[contains(text(), 'Select Country')]"));
 }

@@ -1,10 +1,10 @@
 package co.com.choucair.certification.automatizaciondemo.tasks;
 
-
 import co.com.choucair.certification.automatizaciondemo.model.DemoRegisterBD;
 import co.com.choucair.certification.automatizaciondemo.userinterface.RegisterData;
 import co.com.choucair.certification.automatizaciondemo.util.Utilities;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
@@ -12,22 +12,21 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import org.openqa.selenium.Keys;
 
-
-public class Register implements Task {
+public class InvalidFields implements Task {
     private DemoRegisterBD demoRegisterBD;
     private Utilities utilities;
 
-    public Register(DemoRegisterBD demoRegisterBD) {
+    public InvalidFields(DemoRegisterBD demoRegisterBD) {
         this.demoRegisterBD = demoRegisterBD;
-        utilities = new Utilities(demoRegisterBD);
-    }
+        utilities = new Utilities(demoRegisterBD);}
 
-    public static Register the(DemoRegisterBD demoRegisterBD) {
-        return Tasks.instrumented(Register.class, demoRegisterBD);
-    }
+
+    public static InvalidFields the(DemoRegisterBD demoRegisterBD) {
+        return Tasks.instrumented(InvalidFields.class, demoRegisterBD);}
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+
         actor.attemptsTo(
                 Click.on(RegisterData.INPUT_FIRSTNAME),
                 Enter.theValue(demoRegisterBD.getFirstname()).into(RegisterData.INPUT_FIRSTNAME),
@@ -57,4 +56,3 @@ public class Register implements Task {
                 Click.on(RegisterData.ENTER_BUTTONSUBMIT));
     }
 }
-
