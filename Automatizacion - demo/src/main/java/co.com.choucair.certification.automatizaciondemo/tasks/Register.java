@@ -45,6 +45,7 @@ public class Register implements Task {
                 SelectFromOptions.byVisibleText(demoRegisterBD.getSkills()).from(RegisterData.SELECT_CLICK_SKILLS));
 
         utilities.selectCountry(actor);
+        utilities.uploadFile();
 
         actor.attemptsTo(
                 Click.on(RegisterData.SELECT_CLICK_COUNTRY),

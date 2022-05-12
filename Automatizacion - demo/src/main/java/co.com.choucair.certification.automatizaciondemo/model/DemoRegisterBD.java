@@ -18,8 +18,7 @@ public class DemoRegisterBD {
     private String password1;
     private String password2;
     private String selectcountryR;
-
-
+    private String file;
 
     public String getFirstname() {return firstname;}
     public void setFirstname(String firstname) {this.firstname = firstname;}
@@ -71,4 +70,7 @@ public class DemoRegisterBD {
 
     public String getSelectcountryR() {return selectcountryR;}
     public void setSelectcountryR(String selectcountryR) {this.selectcountryR = selectcountryR;}
+
+    public String getFile() {return file;}
+    public void setFile(String file) {this.file = file;}
 }

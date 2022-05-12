@@ -2,15 +2,21 @@ package co.com.choucair.certification.automatizaciondemo.util;
 
 import co.com.choucair.certification.automatizaciondemo.model.DemoRegisterBD;
 import co.com.choucair.certification.automatizaciondemo.userinterface.RegisterData;
+import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.util.Arrays;
 import java.util.List;
 
-public class Utilities {
+public class Utilities extends PageObject {
 
     private DemoRegisterBD demoRegisterBD;
 
@@ -54,4 +60,29 @@ public class Utilities {
         Target select_country = Target.the("Select Store").
                 located(By.xpath(String.format(xpath, country)));
         actor.attemptsTo(Click.on(select_country));}
+
+    public void uploadFile() {
+        try {
+            Robot robot = new Robot();
+            Actions builder = new Actions(getDriver());
+            Action myAction = builder.click(getDriver().findElement(By.id("imagesrc"))).release().build();
+            myAction.perform();
+            robot.setAutoDelay(2000);
+            StringSelection selection = new StringSelection(demoRegisterBD.getFile());
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
+            robot.setAutoDelay(1000);
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.setAutoDelay(1000);
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
